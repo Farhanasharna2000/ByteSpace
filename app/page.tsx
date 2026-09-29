@@ -4,6 +4,7 @@ import CreatorCTA from "@/components/home/CreatorCTA";
 import Hero from "@/components/home/Hero";
 import Growth from "@/components/home/Growth";
 import LearningPaths from "@/components/home/LearningPaths";
+import Testimonials from "@/components/home/Testimonials";
 import Navbar from "@/components/shared/Navbar";
 
 
@@ -17,6 +18,7 @@ export default function Home() {
       <LearningPaths />
       <Growth />
       <CreatorCTA />
+      <Testimonials />
     </main>
   );
 }
