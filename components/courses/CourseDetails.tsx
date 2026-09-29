@@ -1,11 +1,14 @@
 "use client";
 
+import CourseReviews from "./CourseReviews";
+import CourseLessons from "./CourseLessons";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SiteLink from "@/components/shared/SiteLink";
 import Navbar from "@/components/shared/Navbar";
 import type { Course } from "@/types/course";
-import { courseOutline, courseBenefits, courseKeyPoints, courseSneakPeeks } from "@/constants/course-details";
+import { sidebarLessons, sidebarBenefits, courseKeyPoints, courseSneakPeeks } from "@/constants/course-details";
 
 export default function CourseDetails({ course }: { course: Course }) {
   const [tab, setTab] = useState("About");
@@ -68,22 +71,41 @@ export default function CourseDetails({ course }: { course: Course }) {
               <ul className="mt-4 space-y-3 text-sm text-[#73747a]">{courseKeyPoints.map((point) => <li key={point} className="flex gap-2"><span className="text-[#003be2]" aria-hidden="true">●</span>{point}</li>)}</ul>
             </section>
           </div>}
-          {tab === "Lessons" && <section className="mt-8"><h2 className="font-semibold">Sample lesson outline</h2><p className="mt-2 text-sm text-[#73747a]">A preview of the demo curriculum.</p><ol className="mt-5 divide-y divide-[#dedfe4]">{courseOutline.map((lesson) => <li key={lesson.id} className="flex justify-between gap-5 py-5 text-sm"><span>{lesson.title}</span><span className="shrink-0 text-[#003be2]">{lesson.duration}</span></li>)}</ol></section>}
-          {tab === "Reviews" && <section className="mt-8"><h2 className="font-semibold">Learner Reviews</h2><p className="mt-4 text-sm text-[#73747a]">Reviews for this demo course are not available yet.</p></section>}
+          {tab === "Lessons" && <CourseLessons />}
+          {tab === "Reviews" && <CourseReviews title={course.title} />}
         </div>
 
-        <aside className="relative self-start rounded-2xl border border-[#dedfe4] bg-white p-6 lg:-mt-[440px]">
-          <h2 className="font-semibold">{course.lessons} Lessons ({course.duration})</h2>
-          <ol className="mt-5 space-y-4">{courseOutline.map((lesson) => <li key={lesson.id} className="flex justify-between gap-3 text-xs"><span>▷ {lesson.title}</span><span className="shrink-0 text-[#003be2]">{lesson.duration}</span></li>)}</ol>
-          <p className="mt-4 text-xs text-[#858894]">Sample curriculum</p>
-          <p className="mt-6 text-xs leading-5 text-[#858894]">Ready to start? Build your skills with guided lessons and hands-on practice.</p>
-          <p className="mt-4 text-2xl font-semibold text-[#003be2]">${course.price}<span className="text-xs font-normal text-[#858894]">/lifetime</span></p>
-          <Link href="/join" className="mt-4 block rounded-full bg-[#d4fb20] px-5 py-3 text-center text-sm font-medium hover:bg-[#c4eb10]">Enroll Now</Link>
-          <h3 className="mt-6 text-sm font-semibold">This course includes</h3>
-          <ul className="mt-4 space-y-3 text-xs text-[#73747a]">{courseBenefits.map((benefit) => <li key={benefit}><span aria-hidden="true" className="mr-2 text-[#003be2]">✓</span>{benefit}</li>)}</ul>
-          <div className="mt-6 border-t border-[#dedfe4] pt-5">
-            <p className="text-sm font-semibold">{course.instructor}</p><p className="mt-1 text-xs text-[#858894]">Professional Creator</p>
-            <p className="mt-4 text-xs leading-5 text-[#858894]">Sharing practical knowledge to help you learn, create, and grow.</p>
+        <aside className="relative self-start rounded-[22px] border border-[#d7d8dd] bg-white px-7 py-7 lg:-mt-[440px]">
+          <h2 className="text-base font-semibold tracking-tight">112 Lessons (24 hours)</h2>
+          <ol className="mt-5 space-y-3">
+            {sidebarLessons.map((lesson) => (
+              <li key={lesson.number} className="flex items-start gap-2 text-xs leading-[1.2]">
+                <span>{lesson.number}</span>
+                <span className="flex-1">{lesson.title}</span>
+                <span className="ml-3 shrink-0 text-[#003be2]">{lesson.duration}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-3 text-xs text-[#73747a]">99 more videos</p>
+          <p className="mt-6 text-xs leading-5 text-[#73747a]">Ready to Dive In? Enroll Now and Start Building Your Digital Future!</p>
+          <p className="mt-4 text-[28px] font-semibold tracking-tight text-[#003be2]">${course.price}<span className="text-xs font-normal tracking-normal text-[#73747a]">/lifetime</span></p>
+          <Link href="/join" className="mt-3 block rounded-full bg-[#ceff1a] px-5 py-2 text-center text-sm hover:bg-[#bfee00]">Enroll Now</Link>
+          <h3 className="mt-4 text-base font-semibold tracking-tight">This course include</h3>
+          <ul className="mt-5 space-y-4 text-xs text-[#73747a]">
+            {sidebarBenefits.map((benefit) => (
+              <li key={benefit.label} className="flex items-center gap-2">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#003bff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d={benefit.path} /></svg>
+                {benefit.label}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 border-t border-[#dedfe4] pt-4">
+            <div className="flex items-center gap-3">
+              <Image src="/home/testimonials/james-l.svg" alt="" width={38} height={38} className="size-[38px] rounded-full" />
+              <div><p className="text-sm">PurePearl Studio</p><p className="mt-0.5 text-xs text-[#73747a]">Professional Creator</p></div>
+            </div>
+            <p className="mt-5 text-xs leading-5 text-[#73747a]">Ready to Dive In? Enroll Now and Start Building Your Digital Future!</p>
+            <SiteLink href="/creators/purepearl-studio" className="mt-4 inline-block rounded-full border border-[#d7d8dd] px-3 py-1 text-xs text-[#45464f]">See Full Profile</SiteLink>
           </div>
         </aside>
       </div>
