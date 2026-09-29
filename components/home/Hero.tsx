@@ -22,6 +22,7 @@ export default function Hero() {
         </p>
 
         <form
+          action="/search"
           role="search"
           className="mt-7 flex w-full max-w-md items-center gap-3"
         >
@@ -40,6 +41,7 @@ export default function Hero() {
             </svg>
             <input
               type="search"
+              name="q"
               placeholder="Course, topic, creator"
               className="w-full bg-transparent text-[13px] outline-none placeholder:text-neutral-400"
             />
