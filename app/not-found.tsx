@@ -1,8 +1,10 @@
+import Footer from "@/components/shared/Footer";
 import Link from "next/link";
 import Navbar from "@/components/shared/Navbar";
 
 export default function NotFound() {
   return (
+    <>
     <main
       className="relative isolate overflow-hidden bg-[#003be2] text-white"
       style={{
@@ -40,5 +42,7 @@ export default function NotFound() {
         </Link>
       </section>
     </main>
+    <Footer />
+    </>
   );
 }
