@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Course } from "@/types/course";
 import { mockStudents } from "@/constants/students";
 
 export default function CourseCard({ course }: { course: Course }) {
   return (
     <article className="min-w-0 rounded-[20px] border border-[#d7d8dd] bg-white p-3 text-left transition-shadow hover:shadow-lg">
-      <div className="relative aspect-[1.74] overflow-hidden rounded-xl">
+      <Link href={`/courses/${course.id}`} aria-label={`View ${course.title}`} className="relative block aspect-[1.74] overflow-hidden rounded-xl">
         <Image
           src={course.image}
           alt=""
@@ -20,12 +21,12 @@ export default function CourseCard({ course }: { course: Course }) {
             </span>
           ))}
         </div>
-      </div>
+      </Link>
 
       <div className="pt-4 pb-1">
         <div className="flex items-center gap-3">
           <h3 title={course.title} className="min-w-0 flex-1 truncate text-base leading-6 font-semibold tracking-[-0.025em] text-[#080b10]">
-            {course.title}
+            <Link href={`/courses/${course.id}`} className="hover:text-[#003be2]">{course.title}</Link>
           </h3>
           <span aria-label={`${course.rating} out of 5 stars`} className="flex shrink-0 items-center gap-1 text-sm text-[#606168]">
             {course.rating}<span aria-hidden="true" className="text-base text-[#cdd0d5]">★</span>
