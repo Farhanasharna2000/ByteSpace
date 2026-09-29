@@ -1,0 +1,824 @@
+{
+  "Featured": [
+    {
+      "id": "learn-figma-from-basic",
+      "title": "Learn Figma from Basic",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 17,
+      "duration": "2 hours 16 mins",
+      "comments": 59,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 25
+    },
+    {
+      "id": "build-digital-asset",
+      "title": "Build Digital Asset",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 17,
+      "duration": "2 hours 16 mins",
+      "comments": 59,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 30,
+      "price": 25
+    },
+    {
+      "id": "the-power-of-big-data",
+      "title": "The Power of Big Data",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 17,
+      "duration": "2 hours 16 mins",
+      "comments": 59,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 34,
+      "price": 25
+    },
+    {
+      "id": "balancing-productivity-and-creativity",
+      "title": "Balancing Productivity and Creativity",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 17,
+      "duration": "2 hours 16 mins",
+      "comments": 59,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 38,
+      "price": 25
+    },
+    {
+      "id": "mastering-money-management",
+      "title": "Mastering Money Management",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 17,
+      "duration": "2 hours 16 mins",
+      "comments": 59,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 42,
+      "price": 25
+    },
+    {
+      "id": "from-idea-to-startup-success",
+      "title": "From Idea to Startup Success",
+      "image": "/home/skills/5.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 17,
+      "duration": "2 hours 16 mins",
+      "comments": 59,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 46,
+      "price": 25
+    }
+  ],
+  "Music": [
+    {
+      "id": "music-theory-for-beginners",
+      "title": "Music Theory for Beginners",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "acoustic-guitar-essentials",
+      "title": "Acoustic Guitar Essentials",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "write-your-first-song",
+      "title": "Write Your First Song",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    }
+  ],
+  "Drawing & Painting": [
+    {
+      "id": "pencil-drawing-basics",
+      "title": "Pencil Drawing Basics",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "watercolor-landscapes",
+      "title": "Watercolor Landscapes",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    }
+  ],
+  "Marketing": [
+    {
+      "id": "digital-marketing-fundamentals",
+      "title": "Digital Marketing Fundamentals",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "build-a-brand-strategy",
+      "title": "Build a Brand Strategy",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "email-marketing",
+      "title": "Email Marketing",
+      "image": "/home/skills/5.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    },
+    {
+      "id": "content-that-converts",
+      "title": "Content That Converts",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 21,
+      "duration": "3 hours 31 mins",
+      "comments": 45,
+      "rating": "4.8",
+      "level": "Beginner",
+      "students": 38,
+      "price": 28
+    }
+  ],
+  "Animation": [
+    {
+      "id": "your-first-2d-animation",
+      "title": "Your First 2D Animation",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    }
+  ],
+  "Social Media": [
+    {
+      "id": "content-planning",
+      "title": "Content Planning",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "instagram-marketing",
+      "title": "Instagram Marketing",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "community-building",
+      "title": "Community Building",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    }
+  ],
+  "UI/UX Design": [
+    {
+      "id": "learn-figma-from-basic",
+      "title": "Learn Figma from Basic",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "user-research-essentials",
+      "title": "User Research Essentials",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "interface-design",
+      "title": "Interface Design",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    },
+    {
+      "id": "interactive-prototyping",
+      "title": "Interactive Prototyping",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 21,
+      "duration": "3 hours 31 mins",
+      "comments": 45,
+      "rating": "4.8",
+      "level": "Beginner",
+      "students": 38,
+      "price": 28
+    },
+    {
+      "id": "design-systems",
+      "title": "Design Systems",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 24,
+      "duration": "3 hours 36 mins",
+      "comments": 52,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 42,
+      "price": 31
+    }
+  ],
+  "Creative Marketing": [
+    {
+      "id": "creative-campaigns",
+      "title": "Creative Campaigns",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "brand-storytelling",
+      "title": "Brand Storytelling",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    }
+  ],
+  "Digital Illustration": [
+    {
+      "id": "getting-started-with-procreate",
+      "title": "Getting Started with Procreate",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    }
+  ],
+  "Film & Video": [
+    {
+      "id": "video-editing-basics",
+      "title": "Video Editing Basics",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "cinematography",
+      "title": "Cinematography",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "visual-storytelling",
+      "title": "Visual Storytelling",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    },
+    {
+      "id": "color-grading",
+      "title": "Color Grading",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 21,
+      "duration": "3 hours 31 mins",
+      "comments": 45,
+      "rating": "4.8",
+      "level": "Beginner",
+      "students": 38,
+      "price": 28
+    }
+  ],
+  "Crafts": [
+    {
+      "id": "handmade-paper-crafts",
+      "title": "Handmade Paper Crafts",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    }
+  ],
+  "Freelance & Entrepreneurship": [
+    {
+      "id": "start-freelancing",
+      "title": "Start Freelancing",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "business-planning",
+      "title": "Business Planning",
+      "image": "/home/skills/5.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "from-idea-to-startup-success",
+      "title": "From Idea to Startup Success",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    }
+  ],
+  "Graphic Design": [
+    {
+      "id": "typography-essentials",
+      "title": "Typography Essentials",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "logo-design",
+      "title": "Logo Design",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "visual-identity",
+      "title": "Visual Identity",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    },
+    {
+      "id": "layout-design",
+      "title": "Layout Design",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 21,
+      "duration": "3 hours 31 mins",
+      "comments": 45,
+      "rating": "4.8",
+      "level": "Beginner",
+      "students": 38,
+      "price": 28
+    },
+    {
+      "id": "build-digital-asset",
+      "title": "Build Digital Asset",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 24,
+      "duration": "3 hours 36 mins",
+      "comments": 52,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 42,
+      "price": 31
+    }
+  ],
+  "Photography": [
+    {
+      "id": "photography-for-beginners",
+      "title": "Photography for Beginners",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "portrait-lighting",
+      "title": "Portrait Lighting",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    }
+  ],
+  "Productivity": [
+    {
+      "id": "time-management",
+      "title": "Time Management",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "deep-work",
+      "title": "Deep Work",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "goal-setting",
+      "title": "Goal Setting",
+      "image": "/home/skills/5.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    }
+  ],
+  "Web Development": [
+    {
+      "id": "html-css",
+      "title": "HTML & CSS",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "javascript-essentials",
+      "title": "JavaScript Essentials",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "react-for-beginners",
+      "title": "React for Beginners",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    },
+    {
+      "id": "responsive-websites",
+      "title": "Responsive Websites",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 21,
+      "duration": "3 hours 31 mins",
+      "comments": 45,
+      "rating": "4.8",
+      "level": "Beginner",
+      "students": 38,
+      "price": 28
+    },
+    {
+      "id": "working-with-apis",
+      "title": "Working with APIs",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 24,
+      "duration": "3 hours 36 mins",
+      "comments": 52,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 42,
+      "price": 31
+    },
+    {
+      "id": "build-your-portfolio",
+      "title": "Build Your Portfolio",
+      "image": "/home/skills/5.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 27,
+      "duration": "3 hours 41 mins",
+      "comments": 59,
+      "rating": "4.6",
+      "level": "Intermediate",
+      "students": 46,
+      "price": 34
+    }
+  ],
+  "Data Science": [
+    {
+      "id": "the-power-of-big-data",
+      "title": "The Power of Big Data",
+      "image": "/home/skills/3.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "python-for-data-analysis",
+      "title": "Python for Data Analysis",
+      "image": "/home/skills/5.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    }
+  ],
+  "Cooking": [
+    {
+      "id": "home-cooking-essentials",
+      "title": "Home Cooking Essentials",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    }
+  ],
+  "Writing": [
+    {
+      "id": "creative-writing",
+      "title": "Creative Writing",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "write-your-first-short-story",
+      "title": "Write Your First Short Story",
+      "image": "/home/skills/1.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    }
+  ],
+  "Languages": [
+    {
+      "id": "conversational-spanish",
+      "title": "Conversational Spanish",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    },
+    {
+      "id": "french-for-beginners",
+      "title": "French for Beginners",
+      "image": "/home/skills/2.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 15,
+      "duration": "2 hours 21 mins",
+      "comments": 31,
+      "rating": "4.6",
+      "level": "Beginner",
+      "students": 30,
+      "price": 22
+    },
+    {
+      "id": "english-communication",
+      "title": "English Communication",
+      "image": "/home/skills/4.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 18,
+      "duration": "2 hours 26 mins",
+      "comments": 38,
+      "rating": "4.7",
+      "level": "Intermediate",
+      "students": 34,
+      "price": 25
+    }
+  ],
+  "Personal Development": [
+    {
+      "id": "public-speaking-with-confidence",
+      "title": "Public Speaking with Confidence",
+      "image": "/home/skills/6.jpg",
+      "instructor": "purepearl studio",
+      "lessons": 12,
+      "duration": "2 hours 16 mins",
+      "comments": 24,
+      "rating": "4.5",
+      "level": "Beginner",
+      "students": 26,
+      "price": 19
+    }
+  ]
+}

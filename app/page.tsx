@@ -1,4 +1,5 @@
 import Brand from "@/components/home/Brand";
+import CourseCategories from "@/components/home/CourseCategories";
 import Hero from "@/components/home/Hero";
 import Navbar from "@/components/shared/Navbar";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar overlay />
       <Hero />
       <Brand />
+      <CourseCategories />
     </main>
   );
 }
