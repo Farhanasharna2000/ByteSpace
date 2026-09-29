@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function LearningPaths() {
   return (
     <section
+      id="learning-paths"
       aria-labelledby="learning-paths-heading"
       className="bg-white px-6 pt-8 pb-16 text-center sm:pt-10 sm:pb-20"
     >

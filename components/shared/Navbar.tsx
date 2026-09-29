@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import SiteLink from "@/components/shared/SiteLink";
 import { usePathname } from "next/navigation";
 import { useId, useRef, useState } from "react";
 
@@ -42,7 +42,7 @@ export default function Navbar({
       } ${className}`}
     >
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-y-4 px-[clamp(24px,8.333vw,120px)] py-[clamp(20px,2.4vw,35px)]">
-        <Link
+        <SiteLink
           href="/"
           onClick={() => setMenuOpen(false)}
           className="flex items-center gap-2 text-lg font-semibold"
@@ -54,14 +54,14 @@ export default function Navbar({
             height={37}
             className="h-auto w-[clamp(110px,11.875vw,171px)]"
           />
-        </Link>
+        </SiteLink>
 
         <nav className="hidden justify-center gap-4 text-xs md:flex lg:gap-8 lg:text-sm" aria-label="Main">
           {links.map((l) => {
             const active =
               l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (
-              <Link
+              <SiteLink
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
@@ -72,14 +72,14 @@ export default function Navbar({
                 }
               >
                 {l.label}
-              </Link>
+              </SiteLink>
             );
           })}
         </nav>
 
         <div className="flex items-center gap-3 whitespace-nowrap text-xs text-[#F5F5F6] lg:gap-5 lg:text-sm">
-          <Link href="/signin" className="hidden md:inline">Sign In</Link>
-          <Link href="/join" className="hidden md:inline">Join Us</Link>
+          <SiteLink href="/signin" className="hidden md:inline">Sign In</SiteLink>
+          <SiteLink href="/join" className="hidden md:inline">Join Us</SiteLink>
           <button aria-label="Cart">
             <svg
               width="24"
@@ -116,7 +116,7 @@ export default function Navbar({
           {links.map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
-              <Link
+              <SiteLink
                 key={link.href}
                 href={link.href}
                 aria-current={active ? "page" : undefined}
@@ -124,12 +124,12 @@ export default function Navbar({
                 className={`rounded-lg px-4 py-3 text-sm hover:bg-white/10 ${active ? "bg-white/15 font-medium text-white" : "text-[#CED0D3]"}`}
               >
                 {link.label}
-              </Link>
+              </SiteLink>
             );
           })}
           <div className="mt-2 flex gap-2 border-t border-white/20 pt-3 text-sm">
-            <Link href="/signin" onClick={() => setMenuOpen(false)} className="flex-1 rounded-lg px-4 py-3 text-center hover:bg-white/10">Sign In</Link>
-            <Link href="/join" onClick={() => setMenuOpen(false)} className="flex-1 rounded-lg bg-white px-4 py-3 text-center font-medium text-[#0a35e8]">Join Us</Link>
+            <SiteLink href="/signin" onClick={() => setMenuOpen(false)} className="flex-1 rounded-lg px-4 py-3 text-center hover:bg-white/10">Sign In</SiteLink>
+            <SiteLink href="/join" onClick={() => setMenuOpen(false)} className="flex-1 rounded-lg bg-white px-4 py-3 text-center font-medium text-[#0a35e8]">Join Us</SiteLink>
           </div>
         </nav>
       </div>

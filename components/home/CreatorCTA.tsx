@@ -1,4 +1,4 @@
-import Link from "next/link";
+import SiteLink from "@/components/shared/SiteLink";
 
 export default function CreatorCTA() {
   return (
@@ -22,12 +22,12 @@ export default function CreatorCTA() {
           Course Editor, and showcase your expertise by publishing your finest
           course on the ByteSpace Course Library.
         </p>
-        <Link
+        <SiteLink
           href="/join"
           className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[#d4fb20] px-6 py-2.5 text-[15px] font-medium text-[#171717] transition-colors hover:bg-[#e1ff57] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
         >
           Join as Creator
-        </Link>
+        </SiteLink>
       </div>
     </section>
   );
