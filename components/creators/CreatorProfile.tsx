@@ -36,30 +36,30 @@ export default function CreatorProfile() {
         }}
       >
         <Navbar overlay />
-        <div className="mx-auto max-w-275 px-6 pt-32 pb-14 sm:pt-36">
+        <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto pt-32 pb-14 sm:pt-36">
           <div className="flex items-center gap-5">
             <Image
               src={creatorProfile.avatar}
               alt=""
               width={80}
               height={80}
-              className="size-20 rounded-2xl bg-[#efb5cd]"
+              className="size-20 rounded-3xl "
             />
             <div>
               <div className="flex flex-wrap items-center gap-3">
-                <h1 className="text-2xl font-semibold sm:text-3xl">
+                <h1 className="text-2xl font-semibold lg:text-[36px]">
                   {creatorProfile.name}
                 </h1>
                 <span className="rounded-full bg-[#d4fb20] px-4 py-1 text-xs text-[#242528]">
                   Creator
                 </span>
               </div>
-              <p className="mt-2 text-sm text-white/85">
+              <p className="mt-2 text-sm lg:text-lg text-white/85">
                 {creatorProfile.tagline}
               </p>
             </div>
           </div>
-          <div className="mt-8 text-sm leading-6 font-light text-white/85">
+          <div className="mt-8 text-sm lg:text-lg leading-6 font-light text-white/85">
             <p>{creatorProfile.introduction}</p>
             <p>{creatorProfile.description}</p>
           </div>
@@ -86,7 +86,7 @@ export default function CreatorProfile() {
       </header>
       <section
         aria-label="Creator courses"
-        className="mx-auto max-w-275 px-6 py-12"
+        className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto py-10 lg:py-20"
       >
         <div className="flex flex-wrap items-center gap-3">
           <button

@@ -58,8 +58,8 @@ export default function CourseSearch({
         }}
       >
         <Navbar overlay />
-        <div className="mx-auto max-w-275 px-6 pt-32 pb-14 text-center sm:pt-36">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto pt-32 pb-14 text-center sm:pt-36">
+          <h1 className="text-2xl lg:text-[36px]  font-semibold tracking-tight">
             Find Your Next Course
           </h1>
           <form
@@ -91,7 +91,7 @@ export default function CourseSearch({
 
       <section
         aria-label="Course search results"
-        className="mx-auto max-w-275 px-6 py-12 sm:py-14"
+        className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto py-10 lg:py-20"
       >
         <div className="flex flex-wrap items-center gap-3">
           <button

@@ -2,7 +2,7 @@
 
 import CourseReviews from "./CourseReviews";
 import CourseLessons from "./CourseLessons";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/shared/Navbar";
@@ -18,6 +18,21 @@ export default function CourseDetails({ course }: { course: Course }) {
   const [tab, setTab] = useState("About");
   const [message, setMessage] = useState("");
 
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(
+    () => () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+    },
+    [],
+  );
+
+  function showToast(text: string) {
+    setMessage(text);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setMessage(""), 6000);
+  }
+
   return (
     <main className="bg-white text-[#242528]">
       <div
@@ -29,25 +44,25 @@ export default function CourseDetails({ course }: { course: Course }) {
         }}
       >
         <Navbar overlay />
-        <div className="mx-auto max-w-275 px-6 pt-32 pb-10 sm:pt-36">
+        <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto pt-32 pb-10 lg:pb-16 lg:pt-36">
           <div className="flex items-start justify-between gap-5">
             <div>
-              <h1 className="text-2xl leading-tight font-semibold sm:text-3xl">
+              <h1 className="leading-tight font-semibold text-2xl lg:text-[36px]">
                 {course.title}: A Comprehensive Guide
               </h1>
-              <p className="mt-2 text-sm text-white/85">
+              <p className="mt-2 text-base lg:text-[20px] text-white/85">
                 Unlock your potential with expert guidance
               </p>
-              <p className="mt-4 text-xs">by {course.instructor}</p>
+              <p className="mt-4 text-sm lg:text-lg">by {course.instructor}</p>
             </div>
             <button
               className="shrink-0 rounded-full bg-[#d4fb20] px-5 py-2 flex gap-2 items-center text-xs md:text-base text-[#242528]"
               onClick={async () => {
                 try {
                   await navigator.clipboard.writeText(window.location.href);
-                  setMessage("Course link copied.");
+                  showToast("Course link copied.");
                 } catch {
-                  setMessage(
+                  showToast(
                     "Copy the page URL from your address bar to share this course.",
                   );
                 }
@@ -69,29 +84,61 @@ export default function CourseDetails({ course }: { course: Course }) {
             </button>
           </div>
           <div className="mt-5 flex flex-wrap gap-3 text-xs text-[#242528]">
-            {[
-              course.level,
-              `★ ${course.rating} rating`,
-              `${course.students}+ Students`,
-            ].map((label) => (
-              <span key={label} className="rounded-full bg-white px-4 py-2">
-                {label}
-              </span>
-            ))}
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="#003bff"
+              >
+                <path d="M2 10h2v5H2zm4-4h2v9H6zm4-4h2v13h-2z" />
+              </svg>
+              {course.level}
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="#003bff"
+              >
+                <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z" />
+              </svg>
+              {course.rating} rating
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2">
+              <svg
+                aria-hidden="true"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#003bff"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="9" cy="7" r="3" />
+                <path d="M3 19v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2H3Zm13-15a3 3 0 0 1 0 6m2 3a4 4 0 0 1 3 4v2h-3M7 16h4" />
+              </svg>
+              {course.students}+ Students
+            </span>
           </div>
-          <div className="mt-9 grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)] lg:gap-12">
-            <div className="relative aspect-3/2 overflow-hidden rounded-2xl bg-[#e6e6e6]">
+          <div className="mt-9 grid gap-8 lg:grid-cols-[minmax(0,720px)_minmax(260px,1fr)] lg:gap-12">
+            <div className="relative aspect-720/479 w-full max-w-180 overflow-hidden rounded-3xl bg-[#e6e6e6]">
               <Image
                 src={course.image}
                 alt={`Preview of ${course.title}`}
                 fill
-                sizes="(max-width: 1023px) 100vw, 700px"
+                sizes="(max-width: 767px) 100vw, 720px"
                 className="object-cover"
               />
               <button
                 aria-label="Play course preview"
                 onClick={() =>
-                  setMessage(
+                  showToast(
                     "A video preview is not available for this demo course yet.",
                   )
                 }
@@ -103,13 +150,10 @@ export default function CourseDetails({ course }: { course: Course }) {
               </button>
             </div>
           </div>
-          <p role="status" className="mt-3 text-sm">
-            {message}
-          </p>
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-275 gap-10 px-6 py-10 lg:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)] lg:gap-12">
+      <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto grid gap-10  py-10 lg:py-20 lg:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)] lg:gap-12">
         <div>
           <div
             role="group"
@@ -121,7 +165,7 @@ export default function CourseDetails({ course }: { course: Course }) {
                 key={item}
                 aria-pressed={tab === item}
                 onClick={() => setTab(item)}
-                className={`rounded-full px-5 py-2 text-sm ${tab === item ? "bg-[#d4fb20]" : "bg-[#f5f5f7]"}`}
+                className={`rounded-full px-5 py-2 text-sm lg:text-base ${tab === item ? "bg-[#D4FB20]" : "bg-[#f5f5f7]"}`}
               >
                 {item}
               </button>
@@ -130,35 +174,46 @@ export default function CourseDetails({ course }: { course: Course }) {
           {tab === "About" && (
             <div className="mt-8 space-y-7">
               <section>
-                <h2 className="font-semibold">Description</h2>
-                <div className="mt-4 space-y-4 text-sm leading-7 text-[#73747a]">
+                <h2 className="font-semibold lg:text-[20px]">Description</h2>
+                <div className="mt-4 space-y-4 text-sm lg:text-base leading-7 text-[#73747a]">
                   <p>
-                    Start your learning journey with {course.title}. This course
-                    introduces the essential concepts, tools, and techniques you
-                    need to develop your skills with confidence. Follow clear
-                    explanations and practical examples at your own pace.
+                    Embark on an enlightening exploration into the world of
+                    digital creation with our comprehensive course, "Build
+                    Digital Assets: A Comprehensive Guide." This transformative
+                    learning experience invites you to delve deep into the
+                    intricacies of crafting impactful digital content. From
+                    laying the groundwork with foundational concepts to
+                    mastering advanced techniques, this guide is meticulously
+                    curated to empower you with the skills essential for
+                    navigating the dynamic landscape of digital asset creation.
                   </p>
                   <p>
-                    Move from foundational ideas to hands-on practice as you
-                    explore new approaches and build your understanding. Each
-                    stage encourages you to experiment, solve problems, and
-                    apply what you learn to your own projects.
+                    In the initial modules, you'll establish a solid foundation
+                    by immersing yourself in the foundational concepts that form
+                    the backbone of digital asset creation. Understand the
+                    fundamental elements that constitute compelling digital
+                    content and gain proficiency in leveraging these elements to
+                    communicate effectively in the digital realm.
                   </p>
                   <p>
-                    Whether you are exploring a new interest or expanding your
-                    existing knowledge, this course offers a structured path to
-                    keep learning. Join a community of curious learners and take
-                    the next step in your development.
+                    As you progress through the course, you'll ascend to higher
+                    levels of expertise, delving into the nuances of design
+                    principles that drive impactful creations. Uncover the
+                    secrets behind effective visual communication, exploring
+                    color theory, typography, and layout strategies that elevate
+                    your digital assets to new heights. Engage in hands-on
+                    exercises that reinforce your understanding, allowing you to
+                    apply these principles in practical scenarios.
                   </p>
                 </div>
               </section>
               <section>
-                <h2 className="font-semibold">Sneak Peek</h2>
+                <h2 className="font-semibold lg:text-[20px]">Sneak Peek</h2>
                 <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {courseSneakPeeks.map((src) => (
                     <div
                       key={src}
-                      className="relative aspect-4/3 overflow-hidden rounded-xl"
+                      className="relative aspect-4/3 overflow-hidden rounded-2xl"
                     >
                       <Image
                         src={src}
@@ -172,12 +227,28 @@ export default function CourseDetails({ course }: { course: Course }) {
                 </div>
               </section>
               <section>
-                <h2 className="font-semibold">Key Points</h2>
-                <ul className="mt-4 space-y-3 text-sm text-[#73747a]">
+                <h2 className="font-semibold lg:text-[20px]">Key Points</h2>
+                <ul className="mt-4 space-y-3 text-sm lg:text-base text-[#73747a]">
                   {courseKeyPoints.map((point) => (
                     <li key={point} className="flex gap-2">
                       <span className="text-[#003be2]" aria-hidden="true">
-                        ●
+                        <svg
+                          aria-hidden="true"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          className="shrink-0"
+                        >
+                          <circle cx="9" cy="9" r="9" fill="#003cff" />
+                          <path
+                            d="m5 9 2.5 2.5L13 6"
+                            stroke="white"
+                            strokeWidth="1.6"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
                       </span>
                       {point}
                     </li>
@@ -190,15 +261,15 @@ export default function CourseDetails({ course }: { course: Course }) {
           {tab === "Reviews" && <CourseReviews title={course.title} />}
         </div>
 
-        <aside className="relative self-start rounded-[22px] border border-[#d7d8dd] bg-white px-7 py-7 lg:-mt-[440px]">
-          <h2 className="text-base font-semibold tracking-tight">
+        <aside className="relative self-start rounded-3xl border border-[#d7d8dd] bg-white px-7 py-7 lg:-mt-157">
+          <h2 className="lg:text-[20px] font-semibold tracking-tight">
             112 Lessons (24 hours)
           </h2>
           <ol className="mt-5 space-y-3">
             {sidebarLessons.map((lesson) => (
               <li
                 key={lesson.number}
-                className="flex items-start gap-2 text-xs leading-[1.2]"
+                className="flex items-start gap-2 font-medium leading-[1.2]"
               >
                 <span>{lesson.number}</span>
                 <span className="flex-1">{lesson.title}</span>
@@ -208,11 +279,11 @@ export default function CourseDetails({ course }: { course: Course }) {
               </li>
             ))}
           </ol>
-          <p className="mt-3 text-xs text-[#73747a]">99 more videos</p>
-          <p className="mt-6 text-xs leading-5 text-[#73747a]">
+          <p className="mt-3 text-[#73747a]">99 more videos</p>
+          <p className="mt-6  text-[#73747a]">
             Ready to Dive In? Enroll Now and Start Building Your Digital Future!
           </p>
-          <p className="mt-4 text-[28px] font-semibold tracking-tight text-[#003be2]">
+          <p className="mt-4 text-xl lg:text-[36px] font-semibold tracking-tight text-[#003be2]">
             ${course.price}
             <span className="text-xs font-normal tracking-normal text-[#73747a]">
               /lifetime
@@ -224,7 +295,7 @@ export default function CourseDetails({ course }: { course: Course }) {
           >
             Enroll Now
           </Link>
-          <h3 className="mt-4 text-base font-semibold tracking-tight">
+          <h3 className="mt-4 text-base lg:text-[20px] font-semibold tracking-tight">
             This course include
           </h3>
           <ul className="mt-5 space-y-4 text-xs text-[#73747a]">
@@ -276,6 +347,35 @@ export default function CourseDetails({ course }: { course: Course }) {
             </Link>
           </div>
         </aside>
+      </div>
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="fixed top-5 right-5 left-5 z-50 sm:left-auto sm:w-96"
+      >
+        {message && (
+          <div className="flex items-start gap-3 rounded-2xl border border-[#dedfe4] bg-white p-4 text-sm text-[#242528] shadow-xl">
+            <span
+              aria-hidden="true"
+              className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#ceff1a] font-semibold"
+            >
+              i
+            </span>
+            <p className="flex-1 leading-6">{message}</p>
+            <button
+              type="button"
+              aria-label="Dismiss notification"
+              onClick={() => {
+                if (toastTimer.current) clearTimeout(toastTimer.current);
+                setMessage("");
+              }}
+              className="flex size-7 shrink-0 items-center justify-center rounded-full text-lg text-[#73747a] hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-[#003cff]"
+            >
+              ×
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );

@@ -14,7 +14,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-white  pt-10 pb-8 text-[#242528] lg:pt-20">
+    <footer className="bg-white  pt-10 pb-8 text-[#242528] lg:pt-20 border-t border-gray-200">
       <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
