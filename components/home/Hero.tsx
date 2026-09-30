@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative isolate h-[530px] md:h-[700px] lg:h-[1024px] overflow-hidden bg-[#0a35e8] text-white">
+    <section className="relative isolate h-132.5 md:h-175 lg:h-256 overflow-hidden bg-[#0a35e8] text-white">
       <Image
         src="/home/heroo-bg.svg"
         alt=""

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import SiteLink from "@/components/shared/SiteLink";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useId, useRef, useState } from "react";
 
@@ -41,8 +41,8 @@ export default function Navbar({
         overlay ? "absolute inset-x-0 top-0" : "sticky top-0 bg-[#0a35e8]"
       } ${className}`}
     >
-      <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-y-4 px-[clamp(24px,8.333vw,120px)] py-[clamp(20px,2.4vw,35px)]">
-        <SiteLink
+      <div className="mx-auto flex max-w-360 flex-wrap items-center justify-between gap-y-4 px-[clamp(24px,8.333vw,120px)] py-[clamp(20px,2.4vw,35px)]">
+        <Link
           href="/"
           onClick={() => setMenuOpen(false)}
           className="flex items-center gap-2 text-lg font-semibold"
@@ -54,14 +54,17 @@ export default function Navbar({
             height={37}
             className="h-auto w-[clamp(110px,11.875vw,171px)]"
           />
-        </SiteLink>
+        </Link>
 
-        <nav className="hidden justify-center gap-4 text-xs md:flex lg:gap-8 lg:text-sm" aria-label="Main">
+        <nav
+          className="hidden justify-center gap-4 text-xs md:flex lg:gap-8 lg:text-sm"
+          aria-label="Main"
+        >
           {links.map((l) => {
             const active =
               l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (
-              <SiteLink
+              <Link
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
@@ -72,14 +75,18 @@ export default function Navbar({
                 }
               >
                 {l.label}
-              </SiteLink>
+              </Link>
             );
           })}
         </nav>
 
         <div className="flex items-center gap-3 whitespace-nowrap text-xs text-[#F5F5F6] lg:gap-5 lg:text-sm">
-          <SiteLink href="/signin" className="hidden md:inline">Sign In</SiteLink>
-          <SiteLink href="/join" className="hidden md:inline">Join Us</SiteLink>
+          <Link href="/signin" className="hidden md:inline">
+            Sign In
+          </Link>
+          <Link href="/join" className="hidden md:inline">
+            Join Us
+          </Link>
           <button aria-label="Cart">
             <svg
               width="24"
@@ -97,14 +104,29 @@ export default function Navbar({
           <button
             ref={menuButton}
             type="button"
-            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              menuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={menuOpen}
             aria-controls={menuId}
             onClick={() => setMenuOpen((open) => !open)}
             className="flex size-11 items-center justify-center rounded-lg hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:hidden"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <path d={menuOpen ? "M6 6l12 12M6 18L18 6" : "M4 6h16M4 12h16M4 18h16"} />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              aria-hidden="true"
+            >
+              <path
+                d={
+                  menuOpen ? "M6 6l12 12M6 18L18 6" : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
             </svg>
           </button>
         </div>
@@ -114,9 +136,12 @@ export default function Navbar({
           className={`${menuOpen ? "flex" : "hidden"} w-full flex-col gap-1 rounded-xl border border-white/15 bg-[#0a35e8] p-3 shadow-lg md:hidden`}
         >
           {links.map((link) => {
-            const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            const active =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
             return (
-              <SiteLink
+              <Link
                 key={link.href}
                 href={link.href}
                 aria-current={active ? "page" : undefined}
@@ -124,12 +149,24 @@ export default function Navbar({
                 className={`rounded-lg px-4 py-3 text-sm hover:bg-white/10 ${active ? "bg-white/15 font-medium text-white" : "text-[#CED0D3]"}`}
               >
                 {link.label}
-              </SiteLink>
+              </Link>
             );
           })}
           <div className="mt-2 flex gap-2 border-t border-white/20 pt-3 text-sm">
-            <SiteLink href="/signin" onClick={() => setMenuOpen(false)} className="flex-1 rounded-lg px-4 py-3 text-center hover:bg-white/10">Sign In</SiteLink>
-            <SiteLink href="/join" onClick={() => setMenuOpen(false)} className="flex-1 rounded-lg bg-white px-4 py-3 text-center font-medium text-[#0a35e8]">Join Us</SiteLink>
+            <Link
+              href="/signin"
+              onClick={() => setMenuOpen(false)}
+              className="flex-1 rounded-lg px-4 py-3 text-center hover:bg-white/10"
+            >
+              Sign In
+            </Link>
+            <Link
+              href="/join"
+              onClick={() => setMenuOpen(false)}
+              className="flex-1 rounded-lg bg-white px-4 py-3 text-center font-medium text-[#0a35e8]"
+            >
+              Join Us
+            </Link>
           </div>
         </nav>
       </div>

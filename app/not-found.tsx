@@ -16,7 +16,7 @@ export default function NotFound() {
       <Navbar overlay />
       <section
         aria-labelledby="not-found-heading"
-        className="mx-auto flex min-h-[620px] max-w-[1100px] flex-col items-center px-6 pt-36 pb-20 text-center sm:min-h-[720px] sm:pt-40 lg:min-h-[830px] lg:pt-44 lg:pb-28"
+        className="mx-auto flex min-h-155 max-w-275 flex-col items-center px-6 pt-36 pb-20 text-center md:min-h-180 md:pt-40 lg:min-h-207.5 lg:pt-44 lg:pb-28"
       >
         <p
           aria-hidden="true"
@@ -26,17 +26,17 @@ export default function NotFound() {
         </p>
         <h1
           id="not-found-heading"
-          className="relative -mt-2 max-w-[850px] text-[clamp(28px,5vw,64px)] leading-[1.15] font-semibold tracking-[-0.025em] sm:-mt-5"
+          className="relative -mt-2 max-w-212.5 text-[clamp(28px,5vw,64px)] leading-[1.15] font-semibold tracking-tight md:-mt-5"
         >
           <span className="sr-only">404: </span>
           The page you are looking for doesn’t exist
         </h1>
-        <p className="mt-7 max-w-[520px] text-sm leading-6 font-light text-white/85 sm:mt-9 sm:text-base">
+        <p className="mt-7 max-w-130 text-sm leading-6 font-light text-white/85 md:mt-9 md:text-base">
           Try using the correct URL or go back to the homepage to start again.
         </p>
         <Link
           href="/"
-          className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-[#d4fb20] px-6 py-2.5 text-sm font-medium text-[#242528] transition-colors hover:bg-[#e1ff57] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:mt-7 sm:text-base"
+          className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-[#d4fb20] px-6 py-2.5 text-sm font-medium text-[#242528] transition-colors hover:bg-[#e1ff57] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:mt-7 md:text-base"
         >
           Back to Home
         </Link>

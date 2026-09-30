@@ -11,9 +11,12 @@ const brands = [
 export default function Brand() {
   return (
     <section aria-label="Our partners" className="bg-[#f5f5f7]">
-      <ul className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-8 gap-y-7 px-[clamp(24px,8.333vw,120px)] py-10 sm:gap-x-12 md:min-h-40 md:py-12 lg:flex-nowrap lg:justify-between lg:gap-x-6">
+      <ul className="mx-auto flex max-w-360 flex-wrap items-center justify-center gap-x-8 gap-y-7 px-[clamp(24px,8.333vw,120px)] py-10 md:gap-x-12 md:min-h-40 md:py-12 lg:flex-nowrap lg:justify-between lg:gap-x-6">
         {brands.map((brand) => (
-          <li key={brand.src} className="flex w-[120px] shrink-0 items-center justify-center sm:w-[136px] xl:w-[170px]">
+          <li
+            key={brand.src}
+            className="flex w-30 shrink-0 items-center justify-center md:w-34 xl:w-42.5"
+          >
             <Image
               src={brand.src}
               alt="Logoipsum"

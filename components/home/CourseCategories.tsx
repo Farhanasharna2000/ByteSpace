@@ -20,16 +20,16 @@ export default function CourseCategories() {
       aria-labelledby="course-categories-heading"
       className="bg-white px-6 py-12 text-center sm:py-16"
     >
-      <div className=" max-w-[1440px] px-[clamp(24px,8.333vw,120px)] mx-auto">
+      <div className=" max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto">
         <h2
           id="course-categories-heading"
-          className="text-[clamp(28px,3.2vw,38px)] leading-[1.2] font-semibold tracking-[-0.025em] text-[#080b1c]"
+          className="text-[clamp(28px,3.2vw,38px)] leading-[1.2] font-semibold tracking-tight text-[#080b1c]"
         >
           Discover Your Passion,
           <br />
           Build Your Skills
         </h2>
-        <p className="mx-auto mt-4 max-w-[800px] text-sm leading-[1.75] font-light text-[#858894] sm:text-[15px]">
+        <p className="mx-auto mt-4 max-w-200 text-sm leading-[1.75] font-light text-[#858894] sm:text-[15px]">
           At Bytespace Courses, we bring you closer to life-changing knowledge.
           Explore a variety of courses across different fields, from technology
           to the arts, and make a difference in your career and life.
@@ -38,12 +38,12 @@ export default function CourseCategories() {
         <div
           role="group"
           aria-label="Course categories"
-          className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-9 lg:flex-col lg:gap-[18px]"
+          className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-9 lg:flex-col lg:gap-4.5"
         >
           {visibleRows.map((categories, rowIndex) => (
             <div
               key={categories[0]}
-              className="contents lg:flex lg:flex-wrap lg:justify-center lg:gap-[14px]"
+              className="contents lg:flex lg:flex-wrap lg:justify-center lg:gap-3.5"
             >
               {categories.map((category) => (
                 <button
@@ -52,7 +52,7 @@ export default function CourseCategories() {
                   aria-pressed={selectedCategory === category}
                   aria-controls="course-results"
                   onClick={() => setSelectedCategory(category)}
-                  className={`inline-flex min-h-10 items-center justify-center rounded-full px-[15px] py-2 text-[13px] leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0a35e8] sm:min-h-9 sm:py-2 ${
+                  className={`inline-flex min-h-10 items-center justify-center rounded-full px-3.75 py-2 text-[13px] leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0a35e8] sm:min-h-9 sm:py-2 ${
                     selectedCategory === category
                       ? "bg-[#ceff1a] text-[#11131a] hover:bg-[#bfee00]"
                       : "bg-[#f5f5f7] text-[#45464f] hover:bg-[#e8e8ed]"

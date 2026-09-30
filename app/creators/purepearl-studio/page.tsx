@@ -5,5 +5,10 @@ import Footer from "@/components/shared/Footer";
 export const metadata: Metadata = { title: "PurePearl Studio | ByteSpace" };
 
 export default function CreatorPage() {
-  return <><CreatorProfile /><Footer /></>;
+  return (
+    <>
+      <CreatorProfile />
+      <Footer />
+    </>
+  );
 }

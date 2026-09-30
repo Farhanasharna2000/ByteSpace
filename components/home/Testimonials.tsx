@@ -5,39 +5,39 @@ export default function Testimonials() {
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="bg-[#fafafa] px-6 py-14 sm:py-16 lg:py-[68px]"
+      className="bg-[#fafafa] px-6 py-14 sm:py-16 lg:py-17"
       style={{
         backgroundImage:
           "radial-gradient(ellipse at 51% 24%, #eaff9a 0%, transparent 30%), radial-gradient(ellipse at 98% 42%, #ecffa8 0%, transparent 37%), radial-gradient(ellipse at 9% 94%, #c2cef3 0%, transparent 34%)",
       }}
     >
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto max-w-275">
         <div className="grid items-center gap-6 md:grid-cols-2 md:gap-12">
           <h2
             id="testimonials-heading"
-            className="max-w-[470px] text-[clamp(28px,3.2vw,40px)] leading-[1.2] font-semibold tracking-[-0.025em] text-black"
+            className="max-w-117.5 text-[clamp(28px,3.2vw,40px)] leading-[1.2] font-semibold tracking-tight text-black"
           >
             Discover What Our Community Is Saying
           </h2>
           <p className="text-[15px] leading-[1.75] font-light text-[#606168] sm:text-base">
-            At ByteSpace, our vibrant community of learners and creators is at the
-            heart of what we do. Hear directly from those who have experienced the
-            transformative journey of learning and creating on our platform.
-            Explore testimonials that reflect the diverse perspectives of
-            enthusiastic learners and accomplished creators.
+            At ByteSpace, our vibrant community of learners and creators is at
+            the heart of what we do. Hear directly from those who have
+            experienced the transformative journey of learning and creating on
+            our platform. Explore testimonials that reflect the diverse
+            perspectives of enthusiastic learners and accomplished creators.
           </p>
         </div>
 
         <div className="mt-10 grid auto-rows-fr items-stretch gap-6 md:mt-16 md:grid-cols-3 lg:gap-9">
           {testimonials.map((testimonial) => (
-            <figure key={testimonial.id} className="rounded-[24px] bg-white p-[22px]">
+            <figure key={testimonial.id} className="rounded-3xl bg-white p-5.5">
               <figcaption>
                 <Image
                   src={testimonial.avatar}
                   alt=""
                   width={80}
                   height={80}
-                  className="size-[72px] rounded-full"
+                  className="size-18 rounded-full"
                 />
                 <p className="mt-5 text-lg leading-6 font-semibold tracking-tight text-black">
                   {testimonial.name}

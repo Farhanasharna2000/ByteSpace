@@ -13,13 +13,13 @@ export default function Growth() {
           "radial-gradient(ellipse at 28% 4%, #eaff9a 0%, transparent 29%), radial-gradient(ellipse at 96% 8%, #e7ebf8 0%, transparent 26%), radial-gradient(ellipse at 5% 51%, #d5def9 0%, transparent 28%), radial-gradient(ellipse at 2% 88%, #e8ff92 0%, transparent 24%), radial-gradient(ellipse at 88% 95%, #c6d3f6 0%, transparent 32%)",
       }}
     >
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto max-w-275">
         <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-16">
-          <div className="max-w-[480px]">
-            <h2 className="text-[clamp(28px,3.2vw,40px)] leading-[1.2] font-semibold tracking-[-0.025em]">
+          <div className="max-w-120">
+            <h2 className="text-[clamp(28px,3.2vw,40px)] leading-[1.2] font-semibold tracking-tight">
               Your Path to Professional Growth Starts Here!
             </h2>
-            <p className="mt-7 max-w-[410px] text-sm leading-[1.75] font-light text-[#606168] sm:text-[15px]">
+            <p className="mt-7 max-w-102.5 text-sm leading-[1.75] font-light text-[#606168] sm:text-[15px]">
               Explore our curated selection of courses tailored to enhance your
               capabilities and accelerate your career journey. Whether you are
               looking to sharpen specific skills, gain industry expertise, or
@@ -38,16 +38,16 @@ export default function Growth() {
             src={studentGrowth}
             alt="Student with headphones and a laptop, alongside a course preview and learning progress card."
             sizes="(max-width: 767px) calc(100vw - 48px), 550px"
-            className="mx-auto h-auto w-full max-w-[550px]"
+            className="mx-auto h-auto w-full max-w-137.5"
           />
         </div>
 
         <div className="mt-8 grid items-center gap-8 md:mt-0 md:grid-cols-2 md:gap-10 lg:gap-16">
           <div className="md:order-2">
-            <h2 className="max-w-[450px] text-[clamp(28px,3.2vw,40px)] leading-[1.2] font-semibold tracking-[-0.025em]">
+            <h2 className="max-w-112.5 text-[clamp(28px,3.2vw,40px)] leading-[1.2] font-semibold tracking-tight">
               Create &amp; Manage Courses Easily.
             </h2>
-            <p className="mt-7 max-w-[490px] text-sm leading-[1.75] font-light text-[#606168] sm:text-[15px]">
+            <p className="mt-7 max-w-122.5 text-sm leading-[1.75] font-light text-[#606168] sm:text-[15px]">
               <span className="font-semibold text-[#242528]">ByteSpace</span>{" "}
               supports individuals or entities in the creation, publication, and
               administration of educational courses.
@@ -68,7 +68,7 @@ export default function Growth() {
             src={creatorGrowth}
             alt="Course creator holding a tablet, with revenue and happy student cards."
             sizes="(max-width: 767px) calc(100vw - 48px), 500px"
-            className="mx-auto h-auto w-full max-w-[500px] md:order-1"
+            className="mx-auto h-auto w-full max-w-125 md:order-1"
           />
         </div>
       </div>
