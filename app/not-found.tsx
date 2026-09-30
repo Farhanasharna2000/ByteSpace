@@ -1,19 +1,17 @@
 import Link from "next/link";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
 
 export default function NotFound() {
   return (
     <>
     <main
-      className="relative isolate min-h-screen overflow-hidden bg-[#003be2] text-white"
+      className="relative isolate h-125 md:h-150 lg:h-239.25 overflow-hidden bg-[#003be2] text-white"
       style={{
         backgroundImage:
           "linear-gradient(to right, rgb(255 255 255 / 12%) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 12%) 1px, transparent 1px)",
         backgroundSize: "clamp(52px, 8.333vw, 120px) clamp(52px, 8.333vw, 120px)",
       }}
     >
-      <Navbar overlay />
+
       <section
         aria-labelledby="not-found-heading"
         className="mx-auto flex min-h-screen max-w-360 flex-col items-center px-5 pt-[clamp(140px,14.5vw,210px)] pb-[clamp(60px,8.5vw,120px)] text-center"
@@ -44,7 +42,7 @@ export default function NotFound() {
         </Link>
       </section>
     </main>
-    <Footer />
+
     </>
   );
 }

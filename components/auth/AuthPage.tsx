@@ -5,7 +5,7 @@ import AuthForm from "./AuthForm";
 export default function AuthPage({ register = false }: { register?: boolean }) {
   return (
     <main
-      className="min-h-screen bg-[#003be2] px-6 py-7 text-white sm:px-10"
+      className="flex min-h-dvh items-center justify-center bg-[#003be2] px-6 py-7 text-white sm:px-10"
       style={{
         backgroundImage:
           "linear-gradient(to right, rgb(255 255 255 / 12%) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 12%) 1px, transparent 1px)",
@@ -13,7 +13,7 @@ export default function AuthPage({ register = false }: { register?: boolean }) {
           "clamp(52px, 8.333vw, 120px) clamp(52px, 8.333vw, 120px)",
       }}
     >
-      <div className="mx-auto max-w-275">
+      <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto">
         <Link
           href="/"
           aria-label="ByteSpace home"
@@ -27,12 +27,12 @@ export default function AuthPage({ register = false }: { register?: boolean }) {
             className="absolute top-0 left-0 max-w-none"
           />
         </Link>
-        <div className="grid gap-10 py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14 lg:gap-24">
+        <div className="grid items-center gap-10 py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14 lg:gap-24">
           <div>
-            <h2 className="text-lg font-medium">
+            <h2 className="lg:text-[20px] font-medium">
               {register ? "Sign up and come in" : "Sign in with ease"}
             </h2>
-            <p className="mt-3 max-w-97.5 text-sm leading-7 font-light text-white/85">
+            <p className="mt-3  text-sm lg:text-lg  text-white/85">
               {register
                 ? "The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost."
                 : "Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge."}

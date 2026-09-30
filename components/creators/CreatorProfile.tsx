@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Navbar from "@/components/shared/Navbar";
 import CourseCard from "@/components/shared/CourseCard";
 import { creatorProfile } from "@/constants/creator";
 import { getCourses } from "@/services/courses";
@@ -35,7 +34,7 @@ export default function CreatorProfile() {
           backgroundSize: "104px 104px",
         }}
       >
-        <Navbar overlay />
+
         <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto pt-32 pb-14 sm:pt-36">
           <div className="flex items-center gap-5">
             <Image

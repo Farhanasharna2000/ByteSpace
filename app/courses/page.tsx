@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import CourseSearch from "@/components/courses/CourseSearch";
-import Footer from "@/components/shared/Footer";
 
 export const metadata: Metadata = {
   title: "Find Your Next Course | ByteSpace",
@@ -19,7 +18,7 @@ export default async function CoursesPage({
         initialQuery={q}
         initialCategory={category}
       />
-      <Footer />
+
     </>
   );
 }

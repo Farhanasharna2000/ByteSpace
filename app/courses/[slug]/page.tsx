@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllCourses } from "@/services/courses";
 import CourseDetails from "@/components/courses/CourseDetails";
-import Footer from "@/components/shared/Footer";
 
 export default async function CoursePage({
   params,
@@ -14,7 +13,7 @@ export default async function CoursePage({
   return (
     <>
       <CourseDetails course={course} />
-      <Footer />
+
     </>
   );
 }

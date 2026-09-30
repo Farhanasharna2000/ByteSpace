@@ -5,7 +5,6 @@ import CourseLessons from "./CourseLessons";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/shared/Navbar";
 import type { Course } from "@/types/course";
 import {
   sidebarLessons,
@@ -43,7 +42,7 @@ export default function CourseDetails({ course }: { course: Course }) {
           backgroundSize: "104px 104px",
         }}
       >
-        <Navbar overlay />
+
         <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto pt-32 pb-10 lg:pb-16 lg:pt-36">
           <div className="flex items-start justify-between gap-5">
             <div>
@@ -178,8 +177,8 @@ export default function CourseDetails({ course }: { course: Course }) {
                 <div className="mt-4 space-y-4 text-sm lg:text-base leading-7 text-[#73747a]">
                   <p>
                     Embark on an enlightening exploration into the world of
-                    digital creation with our comprehensive course, "Build
-                    Digital Assets: A Comprehensive Guide." This transformative
+                    digital creation with our comprehensive course, &quot;Build
+                    Digital Assets: A Comprehensive Guide.&quot; This transformative
                     learning experience invites you to delve deep into the
                     intricacies of crafting impactful digital content. From
                     laying the groundwork with foundational concepts to
@@ -188,7 +187,7 @@ export default function CourseDetails({ course }: { course: Course }) {
                     navigating the dynamic landscape of digital asset creation.
                   </p>
                   <p>
-                    In the initial modules, you'll establish a solid foundation
+                    In the initial modules, you&apos;ll establish a solid foundation
                     by immersing yourself in the foundational concepts that form
                     the backbone of digital asset creation. Understand the
                     fundamental elements that constitute compelling digital
@@ -196,7 +195,7 @@ export default function CourseDetails({ course }: { course: Course }) {
                     communicate effectively in the digital realm.
                   </p>
                   <p>
-                    As you progress through the course, you'll ascend to higher
+                    As you progress through the course, you&apos;ll ascend to higher
                     levels of expertise, delving into the nuances of design
                     principles that drive impactful creations. Uncover the
                     secrets behind effective visual communication, exploring

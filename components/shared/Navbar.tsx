@@ -15,13 +15,11 @@ const defaultLinks: NavLink[] = [
 
 type NavbarProps = {
   links?: NavLink[];
-  overlay?: boolean;
   className?: string;
 };
 
 export default function Navbar({
   links = defaultLinks,
-  overlay = false,
   className = "",
 }: NavbarProps) {
   const pathname = usePathname();
@@ -37,9 +35,7 @@ export default function Navbar({
           menuButton.current?.focus();
         }
       }}
-      className={`z-30 w-full text-white ${
-        overlay ? "absolute inset-x-0 top-0" : "sticky top-0 bg-[#0a35e8]"
-      } ${className}`}
+      className={`absolute inset-x-0 top-0 z-30 w-full text-white ${className}`}
     >
       <div className="mx-auto flex max-w-360 flex-wrap items-center justify-between gap-y-4 px-[clamp(24px,8.333vw,120px)] py-[clamp(20px,2.4vw,35px)]">
         <Link

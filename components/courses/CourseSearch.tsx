@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/shared/Navbar";
 import CourseCard from "@/components/shared/CourseCard";
 import { getAllCourses, getCourses } from "@/services/courses";
 import {
@@ -57,7 +56,7 @@ export default function CourseSearch({
           backgroundSize: "104px 104px",
         }}
       >
-        <Navbar overlay />
+
         <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto pt-32 pb-14 text-center sm:pt-36">
           <h1 className="text-2xl lg:text-[36px]  font-semibold tracking-tight">
             Find Your Next Course

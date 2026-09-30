@@ -10,10 +10,10 @@ export default function AuthForm({ register = false }: { register?: boolean }) {
 
   return (
     <div className="flex min-h-147.5 flex-col rounded-[22px] bg-white p-7 text-[#242528] sm:p-12">
-      <p className="text-sm text-[#003be2]">
+      <p className="text-sm lg:text-lg text-[#003BE2]">
         {register ? "Create an Account" : "Sign In"}
       </p>
-      <h1 className="mt-1 text-[32px] leading-[1.15] font-semibold tracking-tight sm:text-4xl">
+      <h1 className="mt-1 text-2xl md:text-[32px] leading-[1.15] font-semibold tracking-tight lg:text-[44px]">
         {register ? (
           <>
             Welcome to
