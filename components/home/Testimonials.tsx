@@ -11,6 +11,7 @@ export default function Testimonials() {
           "radial-gradient(ellipse at 51% 24%, #eaff9a 0%, transparent 30%), radial-gradient(ellipse at 98% 42%, #ecffa8 0%, transparent 37%), radial-gradient(ellipse at 9% 94%, #c2cef3 0%, transparent 34%)",
       }}
     >
+      
       <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto">
         <div className="grid items-center gap-6 md:grid-cols-2 md:gap-12">
           <h2
