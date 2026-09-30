@@ -1,4 +1,4 @@
-import { brands } from "@/constants/beand";
+import { brands } from "@/constants/brand";
 import Image from "next/image";
 
 export default function Brand() {
