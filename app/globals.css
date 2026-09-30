@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@layer base {
+  a[href] {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a[href]:hover {
+    text-decoration: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

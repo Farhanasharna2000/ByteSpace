@@ -2,15 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { footerLegalLinks, footerLinkGroups } from "@/constants/footer";
 
 export default function Footer() {
   const [message, setMessage] = useState("");
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+  }, []);
 
   return (
-    <footer className="bg-white px-6 pt-14 pb-8 text-[#242528] sm:pt-16">
-      <div className="mx-auto max-w-275">
+    <footer className="bg-white  pt-10 pb-8 text-[#242528] lg:pt-20">
+      <div className="max-w-360 px-[clamp(24px,8.333vw,120px)] mx-auto">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Link
@@ -45,6 +50,8 @@ export default function Footer() {
                 setMessage(
                   "Newsletter signup is not available yet. Please check back soon.",
                 );
+                if (toastTimer.current) clearTimeout(toastTimer.current);
+                toastTimer.current = setTimeout(() => setMessage(""), 6000);
               }}
             >
               <label htmlFor="footer-email" className="sr-only">
@@ -57,7 +64,7 @@ export default function Footer() {
                 autoComplete="email"
                 required
                 placeholder="Enter your email"
-                aria-describedby="newsletter-privacy newsletter-status"
+                aria-describedby="newsletter-privacy"
                 className="min-h-12 min-w-0 flex-1 rounded-full border border-[#d2d3d8] px-5 text-sm outline-none placeholder:text-[#45464f] focus:border-[#003cff] focus:ring-2 focus:ring-[#003cff]/20"
               />
               <button
@@ -72,17 +79,10 @@ export default function Footer() {
               className="mt-5 max-w-107.5 text-xs leading-[1.75]"
             >
               By subscribing, you agree to our{" "}
-              <Link href="/privacy" className="hover:underline">
+              <Link href="/privacy" className="cursor-pointer">
                 Privacy Policy
               </Link>{" "}
               and consent to receive updates from our company.
-            </p>
-            <p
-              id="newsletter-status"
-              role="status"
-              className="mt-2 text-sm text-[#606168]"
-            >
-              {message}
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-sm leading-5 hover:text-[#003cff] hover:underline"
+                        className="text-sm leading-5 hover:text-[#003cff] cursor-pointer"
                       >
                         {link.label}
                       </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="hover:text-[#003cff] hover:underline"
+                    className="hover:text-[#003cff] cursor-pointer text-xs"
                   >
                     {link.label}
                   </Link>
@@ -123,6 +123,25 @@ export default function Footer() {
             </ul>
           </nav>
         </div>
+      </div>
+      <div role="status" aria-live="polite" aria-atomic="true" className="fixed top-5 right-5 left-5 z-50 sm:left-auto sm:w-96">
+        {message && (
+          <div className="flex items-start gap-3 rounded-2xl border border-[#dedfe4] bg-white p-4 text-sm text-[#242528] shadow-xl">
+            <span aria-hidden="true" className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#ceff1a] font-semibold">i</span>
+            <p className="flex-1 leading-6">{message}</p>
+            <button
+              type="button"
+              aria-label="Dismiss notification"
+              onClick={() => {
+                if (toastTimer.current) clearTimeout(toastTimer.current);
+                setMessage("");
+              }}
+              className="flex size-7 shrink-0 items-center justify-center rounded-full text-lg text-[#73747a] hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-[#003cff]"
+            >
+              ×
+            </button>
+          </div>
+        )}
       </div>
     </footer>
   );

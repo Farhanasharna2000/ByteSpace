@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/shared/Navbar";
-import CourseCard from "@/components/home/CourseCard";
+import CourseCard from "@/components/shared/CourseCard";
 import { creatorProfile } from "@/constants/creator";
 import { getCourses } from "@/services/courses";
 
@@ -153,7 +153,7 @@ export default function CreatorProfile() {
                 setCategory("All courses");
                 setSort("Most relevant");
               }}
-              className="ml-2 text-[#003be2] hover:underline"
+              className="ml-2 text-[#003be2] cursor-pointer"
             >
               Reset filters
             </button>

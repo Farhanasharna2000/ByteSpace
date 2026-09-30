@@ -132,7 +132,7 @@ export default function AuthForm({ register = false }: { register?: boolean }) {
         {register ? "Already have an account? " : "New user? "}
         <Link
           href={register ? "/signin" : "/join"}
-          className="text-[#003be2] hover:underline"
+          className="text-[#003be2] cursor-pointer"
         >
           {register ? "Login" : "Create an account"}
         </Link>

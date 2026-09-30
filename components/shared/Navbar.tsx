@@ -57,7 +57,7 @@ export default function Navbar({
         </Link>
 
         <nav
-          className="hidden justify-center gap-4 text-xs md:flex lg:gap-8 lg:text-sm"
+          className="hidden justify-center gap-4  md:flex lg:gap-8 text-sm lg:text-base"
           aria-label="Main"
         >
           {links.map((l) => {
@@ -80,7 +80,7 @@ export default function Navbar({
           })}
         </nav>
 
-        <div className="flex items-center gap-3 whitespace-nowrap text-xs text-[#F5F5F6] lg:gap-5 lg:text-sm">
+        <div className="flex items-center gap-3 whitespace-nowrap text-[#F5F5F6] lg:gap-5 text-sm lg:text-base">
           <Link href="/signin" className="hidden md:inline">
             Sign In
           </Link>

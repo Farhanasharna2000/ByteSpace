@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/shared/Navbar";
-import CourseCard from "@/components/home/CourseCard";
+import CourseCard from "@/components/shared/CourseCard";
 import { getAllCourses, getCourses } from "@/services/courses";
 import {
   categoryRows,
@@ -222,7 +222,7 @@ export default function CourseSearch({
               ))}
             </select>
             <button
-              className="text-sm text-[#003be2] hover:underline"
+              className="text-sm text-[#003be2] cursor-pointer"
               onClick={() => {
                 setCategory("Featured");
                 setLevel("All levels");
