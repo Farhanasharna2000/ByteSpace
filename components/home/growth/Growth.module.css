@@ -1,0 +1,51 @@
+.image {
+  animation: drift 9s ease-in-out infinite;
+}
+
+.ring {
+  position: absolute;
+  pointer-events: none;
+  animation: drift 7s ease-in-out infinite;
+}
+
+.ring {
+  z-index: -1;
+  top: 9%;
+  right: 3%;
+  width: clamp(36px, 6vw, 72px);
+  aspect-ratio: 1;
+  border: 8px solid #003be2;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation-delay: -3s;
+}
+
+
+.creator .image {
+  animation-delay: -4s;
+}
+
+.creator .ring {
+  top: 4%;
+  right: 8%;
+  border-color: #a7cd00;
+  animation-delay: -1s;
+}
+
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .ring {
+    animation: none;
+  }
+}

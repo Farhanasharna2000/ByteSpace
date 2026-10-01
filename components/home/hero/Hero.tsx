@@ -1,16 +1,51 @@
 import Image from "next/image";
+import styles from "./Hero.module.css";
+
+const decorations = [
+  "squiggle-right",
+  "squiggle-left",
+  "squiggle-small",
+  "ring",
+  "block",
+  "triangle",
+];
 
 export default function Hero() {
   return (
     <section className="relative isolate h-135 md:h-175 lg:h-256 overflow-hidden bg-[#0a35e8] text-white">
-      <Image
-        src="/home/heroo-bg.svg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="-z-10 object-cover object-bottom"
-      />
+      <div aria-hidden="true" className={`pointer-events-none absolute inset-0 -z-10 ${styles.canvas}`}>
+        <Image
+          src="/home/hero/scene.webp"
+          alt=""
+          fill
+          preload
+          quality={85}
+          sizes="(max-width: 767px) 836px, (max-width: 1023px) 1083px, max(100vw, 1584px)"
+          className="object-cover object-bottom"
+        />
+        <div className={styles.stage}>
+        {decorations.map((decoration, index) => (
+          <div
+            key={decoration}
+            className={`absolute -inset-[5%] ${styles.float}`}
+            style={{
+              animationDelay: `${index * -1.3}s`,
+              animationDuration: `${7 + index}s`,
+            }}
+          >
+            <Image
+              src={`/home/hero/${decoration}.webp`}
+              alt=""
+              fill
+              unoptimized
+              loading="eager"
+              sizes="(max-width: 767px) 836px, (max-width: 1023px) 1083px, max(100vw, 1584px)"
+              className="object-fill"
+            />
+          </div>
+        ))}
+        </div>
+      </div>
 
       <div className="mx-auto flex max-w-[80%] md:max-w-[70%] lg:max-w-6xl flex-col items-center px-6 pt-20 lg:pt-30  text-center">
         <h1 className="text-2xl md:text-4xl lg:text-[72px] font-semibold ">
@@ -42,6 +77,7 @@ export default function Hero() {
             <input
               type="search"
               name="q"
+              aria-label="Search courses"
               placeholder="Course, topic, creator"
               className="w-full bg-transparent text-[13px] outline-none placeholder:text-neutral-400"
             />

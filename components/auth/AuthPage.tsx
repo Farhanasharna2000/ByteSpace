@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import AuthForm from "./AuthForm";
+import styles from "./AuthPage.module.css";
+
+const artworkLayers = [
+  "back-card",
+  "front-card",
+  "students",
+  "squiggle",
+  "ring",
+  "triangle",
+];
 
 export default function AuthPage({ register = false }: { register?: boolean }) {
   return (
@@ -37,13 +47,32 @@ export default function AuthPage({ register = false }: { register?: boolean }) {
                 ? "The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost."
                 : "Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge."}
             </p>
-            <Image
-              src="/home/auth/auth.svg"
-              alt="Course previews with student reviews and bright lime decorations"
-              width={480}
-              height={550}
-              className="mt-10 hidden h-auto w-full md:block"
-            />
+            <div
+              role="img"
+              aria-label="Course previews with student reviews and bright lime decorations"
+              className="relative mt-10 hidden aspect-[600/634] w-full md:block"
+            >
+              {artworkLayers.map((layer, index) => (
+                <div
+                  key={layer}
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute inset-0 ${styles.float}`}
+                  style={{
+                    animationDelay: `${index * -1.5}s`,
+                    animationDuration: `${8 + index}s`,
+                  }}
+                >
+                  <Image
+                    src={`/home/auth/${layer}.webp`}
+                    alt=""
+                    fill
+                    unoptimized
+                    sizes="(max-width: 767px) 1px, (max-width: 1439px) 35vw, 500px"
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <AuthForm register={register} />
         </div>

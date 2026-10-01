@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { creatorBenefits, growthStats } from "@/constants/growth";
-import studentGrowth from "@/public/home/growth/1.png";
-import creatorGrowth from "@/public/home/growth/2.png";
+import studentGrowth from "@/public/home/growth/1.webp";
+import creatorGrowth from "@/public/home/growth/2.webp";
+import styles from "./Growth.module.css";
 
 export default function Growth() {
   return (
@@ -34,12 +35,16 @@ export default function Growth() {
               ))}
             </dl>
           </div>
-          <Image
+          <div className={`relative isolate mx-auto w-full max-w-137.5 ${styles.artwork}`}>
+            <span aria-hidden="true" className={styles.ring} />
+            <Image
             src={studentGrowth}
             alt="Student with headphones and a laptop, alongside a course preview and learning progress card."
-            sizes="(max-width: 767px) calc(100vw - 48px), 550px"
-            className="mx-auto h-auto w-full max-w-137.5"
+            quality={85}
+            sizes="(max-width: 575px) calc(100vw - 48px), (max-width: 767px) 83.334vw, (max-width: 1023px) calc(41.667vw - 20px), (max-width: 1439px) calc(41.667vw - 32px), 550px"
+            className={`relative h-auto w-full ${styles.image}`}
           />
+          </div>
         </div>
 
         <div className="mt-8 grid items-center gap-8 md:mt-0 md:grid-cols-2 md:gap-10 lg:gap-16">
@@ -64,12 +69,16 @@ export default function Growth() {
               ))}
             </ul>
           </div>
-          <Image
+          <div className={`relative isolate mx-auto w-full max-w-125 md:order-1 ${styles.artwork} ${styles.creator}`}>
+            <span aria-hidden="true" className={styles.ring} />
+            <Image
             src={creatorGrowth}
             alt="Course creator holding a tablet, with revenue and happy student cards."
-            sizes="(max-width: 767px) calc(100vw - 48px), 500px"
-            className="mx-auto h-auto w-full max-w-125 md:order-1"
+            quality={85}
+            sizes="(max-width: 575px) calc(100vw - 48px), (max-width: 767px) 500px, (max-width: 1023px) calc(41.667vw - 20px), (max-width: 1279px) calc(41.667vw - 32px), 500px"
+            className={`relative h-auto w-full ${styles.image}`}
           />
+          </div>
         </div>
       </div>
     </section>

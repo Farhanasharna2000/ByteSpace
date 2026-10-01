@@ -1,11 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import styles from "./CreatorCTA.module.css";
 
 export default function CreatorCTA() {
   return (
     <section
       aria-labelledby="creator-cta-heading"
-      className="flex h-100 md:h-120  lg:h-162.5 items-center justify-center bg-[#073bea] bg-[url('/home/cta-bg.svg')] bg-cover bg-center px-6 py-10 text-center text-white lg:py-20"
+      className="relative isolate flex h-100 md:h-120 lg:h-162.5 overflow-hidden items-center justify-center bg-[#073bea] bg-[url('/home/creator-cta/grid.svg')] bg-cover bg-center px-6 py-10 text-center text-white lg:py-20"
     >
+      <div aria-hidden="true" className={`pointer-events-none absolute inset-0 -z-10 ${styles.canvas}`}>
+        <div className={styles.stage}>
+        {Array.from({ length: 7 }, (_, index) => (
+          <div
+            key={index}
+            className={`absolute -inset-[5%] ${styles.float}`}
+            style={{
+              animationDelay: `${index * -1.4}s`,
+              animationDuration: `${7 + index}s`,
+            }}
+          >
+            <Image
+              src={`/home/creator-cta/shape-${index}.webp`}
+              alt=""
+              fill
+              unoptimized
+              sizes="(max-width: 767px) 1299px, (max-width: 1023px) 1559px, max(100vw, 2110px)"
+              className="object-fill"
+            />
+          </div>
+        ))}
+        </div>
+      </div>
       <div className="mx-auto w-full max-w-[85%] lg:max-w-[70%]">
         <h2
           id="creator-cta-heading"

@@ -1,0 +1,33 @@
+.canvas {
+  container-type: size;
+}
+
+/* Match the original cover layout while leaving overscan for motion. */
+.stage {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: max(100cqw, 140.625cqh);
+  height: max(100cqh, 71.111111cqw);
+  transform: translateX(-50%);
+}
+
+.float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float {
+    animation: none;
+  }
+}
