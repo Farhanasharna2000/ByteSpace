@@ -43,14 +43,24 @@ export default function CourseCategories() {
               key={categories[0]}
               className="contents lg:flex lg:flex-wrap lg:justify-center lg:gap-3.5"
             >
-              {categories.map((category) => (
+              {categories.map((category, categoryIndex) => {
+                const index = visibleRows
+                  .slice(0, rowIndex)
+                  .reduce((count, row) => count + row.length, 0) + categoryIndex;
+                const visibility = showMore || index < 4
+                  ? "inline-flex"
+                  : index < 8
+                    ? "hidden md:inline-flex"
+                    : "hidden lg:inline-flex";
+
+                return (
                 <button
                   type="button"
                   key={category}
                   aria-pressed={selectedCategory === category}
                   aria-controls="course-results"
                   onClick={() => setSelectedCategory(category)}
-                  className={`inline-flex  items-center justify-center rounded-full px-4 py-1 md:py-2 text-xs lg:text-base leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0a35e8]   ${
+                  className={`${visibility} items-center justify-center rounded-full px-4 py-1 md:py-2 text-xs lg:text-base leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0a35e8]   ${
                     selectedCategory === category
                       ? "bg-[#ceff1a] text-[#11131a] hover:bg-[#bfee00]"
                       : "bg-[#f5f5f7] text-[#45464f] hover:bg-[#e8e8ed]"
@@ -58,16 +68,20 @@ export default function CourseCategories() {
                 >
                   {category}
                 </button>
-              ))}
+                );
+              })}
               {rowIndex === visibleRows.length - 1 && (
                 <button
                   type="button"
                   aria-expanded={showMore}
                   onClick={() => {
                     setShowMore((expanded) => !expanded);
+                    const collapsedLimit = window.matchMedia("(min-width: 1024px)").matches
+                      ? categoryRows.flat().length
+                      : window.matchMedia("(min-width: 768px)").matches ? 8 : 4;
                     if (
                       showMore &&
-                      !categoryRows.flat().includes(selectedCategory)
+                      !categoryRows.flat().slice(0, collapsedLimit).includes(selectedCategory)
                     ) {
                       setSelectedCategory("Featured");
                     }
